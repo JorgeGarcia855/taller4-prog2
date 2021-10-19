@@ -1,5 +1,8 @@
 package co.edu.unbosque.model.dtos;
 
+/**
+ * Objeto que contiene los parametros de la tabla PetCase.
+ */
 public final class PetCase {
     private final String created_at, type, description;
     private final int pet_id;

@@ -10,12 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class UserService {
-    private final Connection conn;
-    public UserService (Connection conn) {
-        this.conn = conn;
-    }
-
-    public void showUsersByRole(String rol) throws SQLException {
+    /**
+     * Muestra una lista de usuarios filtrada por el rol.
+     * @param conn La coneccion a la base de datos local.
+     * @param rol El rol del usuario.
+     * @throws SQLException Cuando hay un error al conectarse a la base de datos.
+     */
+    public static void showUsersByRole(Connection conn, String rol) throws SQLException {
         List<User> users = new ArrayList<>();
         try (Statement stmt = conn.createStatement()) {
             String sql = "SELECT * FROM UserApp WHERE role = '"+rol+"'";
@@ -27,14 +28,8 @@ public final class UserService {
                 String role = rs.getString("role");
                 users.add(new User(username, password, email, role));
             }
-            for (User user: users) {
-                System.out.println(user.toString());
-            }
+            users.forEach(System.out::println);
             rs.close();
         }
-    }
-
-    public static UserService getInstance(Connection conn) {
-        return new UserService(conn);
     }
 }

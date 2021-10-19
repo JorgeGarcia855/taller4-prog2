@@ -7,12 +7,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public final class PetCaseService {
-    private final Connection conn;
-    public PetCaseService(Connection conn) {
-        this.conn = conn;
-    }
-
-    public void updatePetCase(PetCase petCase) throws SQLException {
+    /**
+     * Actualiza el reglon especificado por el usuario.
+     * @param conn La coneccion a la base de datos local.
+     * @param petCase El caso de la mascota.
+     * @throws SQLException Cuando hay un error al conectarse a la base de datos.
+     */
+    public static void updatePetCase(Connection conn, PetCase petCase) throws SQLException {
         try (Statement stmt = conn.createStatement()) {
             String sql = "UPDATE PetCase SET created_at = '"+petCase.getCreated_at()+"'," +
                     " type = '"+petCase.getType()+"'," +
@@ -21,9 +22,5 @@ public final class PetCaseService {
             int rowUpdated = stmt.executeUpdate(sql);
             System.out.println("Rows updated: "+rowUpdated);
         }
-    }
-
-    public static PetCaseService getInstance(Connection conn) {
-        return new PetCaseService(conn);
     }
 }

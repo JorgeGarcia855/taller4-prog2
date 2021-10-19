@@ -10,12 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class VisitService {
-    private final Connection conn;
-    public VisitService(Connection conn) {
-        this.conn = conn;
-    }
-
-    public void showVisitsByID(int petId) throws SQLException {
+    /**
+     * Muestra la vista al veterinario del usuario especificado por la identificacion de la mascota.
+     * @param conn La coneccion a la base de datos local.
+     * @param petId La identificacion de la mascota.
+     * @throws SQLException Cuando hay un error al conectarse a la base de datos.
+     */
+    public static void showVisitsByID(Connection conn, int petId) throws SQLException {
         List<Visit> visits = new ArrayList<>();
         try (Statement stmt = conn.createStatement()) {
             String sql = "SELECT * FROM Visit WHERE pet_id = "+petId;
@@ -29,15 +30,8 @@ public final class VisitService {
                 int pet_id = rs.getInt("pet_id");
                 visits.add(new Visit(visit_id, created_at, type, description, vet_id, pet_id));
             }
-
-            for (Visit visit: visits){
-                System.out.println(visit.toString());
-            }
+            visits.forEach(System.out::println);
             rs.close();
         }
-    }
-
-    public static VisitService getInstance(Connection conn) {
-        return new VisitService(conn);
     }
 }

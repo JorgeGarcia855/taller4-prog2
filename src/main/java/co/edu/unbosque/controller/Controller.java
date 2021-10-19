@@ -26,6 +26,10 @@ public class Controller {
         CLI();
     }
 
+    /**
+     * Este metodo crea una interfaz de linea de comando para interactuar
+     * con la aplicacion.
+     */
     public void CLI() {
         Scanner scan = new Scanner(System.in).useDelimiter("\n");
         Date date = Calendar.getInstance().getTime();
@@ -44,22 +48,21 @@ public class Controller {
                 switch (scan.nextInt()) {
                     case 1 -> {
                         System.out.print("Ingrese rol: ");
-                        UserService.getInstance(conn).showUsersByRole(scan.next());
+                        UserService.showUsersByRole(conn, scan.next());
                     }
-                    case 2 -> VetService.getInstance(conn).countVets();
+                    case 2 -> VetService.countVets(conn);
                     case 3 -> {
                         System.out.print("Ingrese id de la mascota: ");
-                        VisitService.getInstance(conn).showVisitsByID(scan.nextInt());
+                        VisitService.showVisitsByID(conn, scan.nextInt());
                     }
                     case 4 -> {
-                        System.out.println("Ingrese tipo de caso: ");
+                        System.out.print("Ingrese tipo de caso: ");
                         String type = scan.next();
                         System.out.println("Ingrese descripcion: ");
                         String description = scan.next();
                         System.out.print("Ingrese id de la mascota: ");
                         int id = scan.nextInt();
-                        PetCaseService.getInstance(conn).updatePetCase(
-                                new PetCase(df.format(date), type, description, id));
+                        PetCaseService.updatePetCase(conn, new PetCase(df.format(date), type, description, id));
                     }
                     case 5 -> System.exit(0);
                     default -> System.out.println("Ingrese una opcion correcta.");

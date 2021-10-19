@@ -1,5 +1,7 @@
 package co.edu.unbosque.model.dtos;
-
+/**
+ * Objeto que contiene los parametros de la tabla Visit.
+ */
 public final class Visit {
     private final int visit_id;
     private final String created_at, type, description, vet_id;
