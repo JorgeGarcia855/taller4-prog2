@@ -28,14 +28,14 @@ INSERT INTO Pet (microchip, name, species, race, size, sex, picture, owner_id) V
 INSERT INTO Pet (microchip, name, species, race, size, sex, picture, owner_id) VALUES ('667d', 'Ed', 'dog', 'pug', 'XS', 'male', 'ed.png', 'elpepe');
 INSERT INTO Pet (microchip, name, species, race, size, sex, picture, owner_id) VALUES ('555e', 'Max', 'cat', 'siberian', 'M', 'nale', 'max.png', 'carlos333');
 
-INSERT INTO Visit (created_at, type, description, vet_id) VALUES ('12/06/2021', 'consulta', 'Una consulta', 'luis342');
-INSERT INTO Visit (created_at, type, description, vet_id) VALUES ('04/04/2021', 'emergencia', 'Sucedio algo', 'juan222');
-INSERT INTO Visit (created_at, type, description, vet_id) VALUES ('15/10/2021', 'limpieza', 'Limpieza del perro', 'pedro456');
-INSERT INTO Visit (created_at, type, description, vet_id) VALUES ('26/11/2020', 'consulta', 'Otra consulta', 'elpepe');
-INSERT INTO Visit (created_at, type, description, vet_id) VALUES ('19/01/2020', 'consulta', 'Tercera consulta', 'carlos333');
+INSERT INTO Visit (created_at, type, description, vet_id) VALUES ('12/06/2021', 'esterilizacion', 'Una consulta', 'luis342');
+INSERT INTO Visit (created_at, type, description, vet_id) VALUES ('04/04/2021', 'vacunacion', 'Sucedio algo', 'juan222');
+INSERT INTO Visit (created_at, type, description, vet_id) VALUES ('15/10/2021', 'urgencia', 'Limpieza del perro', 'pedro456');
+INSERT INTO Visit (created_at, type, description, vet_id) VALUES ('26/11/2020', 'control', 'Otra consulta', 'elpepe');
+INSERT INTO Visit (created_at, type, description, vet_id) VALUES ('19/01/2020', 'implantacion de microchip', 'Tercera consulta', 'carlos333');
 
-INSERT INTO PetCase (created_at, type, description) VALUES ('12/05/2020', 'consulta', 'Una consulta gatuna');
-INSERT INTO PetCase (created_at, type, description) VALUES ('04/05/2021', 'emergencia', 'Sucedio algo malo');
-INSERT INTO PetCase (created_at, type, description) VALUES ('01/9/2020', 'limpieza', 'Limpieza del perro de nuevo');
-INSERT INTO PetCase (created_at, type, description) VALUES ('29/7/2020', 'consulta', 'Otra consulta pero para un perro');
-INSERT INTO PetCase (created_at, type, description) VALUES ('23/02/2021', 'consulta', 'Tercera consulta del dia');
+INSERT INTO PetCase (created_at, type, description) VALUES ('12/05/2020', 'perdida', 'Una consulta gatuna');
+INSERT INTO PetCase (created_at, type, description) VALUES ('04/05/2021', 'robo', 'Sucedio algo malo');
+INSERT INTO PetCase (created_at, type, description) VALUES ('01/9/2020', 'perdida', 'Limpieza del perro de nuevo');
+INSERT INTO PetCase (created_at, type, description) VALUES ('29/7/2020', 'perdida', 'Otra consulta pero para un perro');
+INSERT INTO PetCase (created_at, type, description) VALUES ('23/02/2021', 'fallecimiento', 'Tercera consulta del dia');
