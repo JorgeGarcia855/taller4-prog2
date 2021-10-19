@@ -1,0 +1,41 @@
+INSERT INTO UserApp (username, password, email, role) VALUES ('luis342', '1234', 'luis342@gmail.com', 'funcionario');
+INSERT INTO UserApp (username, password, email, role) VALUES ('juan222', '4567', 'juan222@hotmail.com', 'propietario');
+INSERT INTO UserApp (username, password, email, role) VALUES ('pedro456', '8900', 'pedro456@yahoo.com', 'funcionario');
+INSERT INTO UserApp (username, password, email, role) VALUES ('elpepe', '1111', 'elpepe@outlook.com', 'propietario');
+INSERT INTO UserApp (username, password, email, role) VALUES ('carlos333', '2233', 'carlos333@gmail.com', 'propietario');
+
+INSERT INTO Official (username, name) VALUES ('luis342', 'Luis');
+INSERT INTO Official (username, name) VALUES ('juan222', 'Juan');
+INSERT INTO Official (username, name) VALUES ('pedro456', 'Pedro');
+INSERT INTO Official (username, name) VALUES ('elpepe', 'Pepe');
+INSERT INTO Official (username, name) VALUES ('carlos333', 'Carlos');
+
+INSERT INTO Owner (username, name, address, neighborhood) VALUES ('luis342', 'Luis', 'Calle 140', 'Usaquen');
+INSERT INTO Owner (username, name, address, neighborhood) VALUES ('juan222', 'Juan', 'Carrera 7ma', 'Alcala');
+INSERT INTO Owner (username, name, address, neighborhood) VALUES ('pedro456', 'Pedro', 'Calle 100', 'Colina');
+INSERT INTO Owner (username, name, address, neighborhood) VALUES ('elpepe', 'Pepe', 'Desconocido', 'Chapinero');
+INSERT INTO Owner (username, name, address, neighborhood) VALUES ('carlos333', 'Carlos', 'Carrera 9na', 'Salitre');
+
+INSERT INTO Vet (username, name, address, neighborhood) VALUES ('luis342', 'Luis', 'Calle 144', 'Usaquen');
+INSERT INTO Vet (username, name, address, neighborhood) VALUES ('juan222', 'Juan', 'Calle 13', 'Alcala');
+INSERT INTO Vet (username, name, address, neighborhood) VALUES ('pedro456', 'Pedro', 'Calle 111', 'Colina');
+INSERT INTO Vet (username, name, address, neighborhood) VALUES ('elpepe', 'Pepe', 'Carrea 7ma', 'Chapinero');
+INSERT INTO Vet (username, name, address, neighborhood) VALUES ('carlos333', 'Carlos', 'Autopista norte', 'Salitre');
+
+INSERT INTO Pet (microchip, name, species, race, size, sex, picture, owner_id) VALUES ('432a', 'Sofia', 'cat', 'bengal', 'L', 'female', 'sofia.png', 'luis342');
+INSERT INTO Pet (microchip, name, species, race, size, sex, picture, owner_id) VALUES ('123b', 'Jeronimo', 'cat', 'himalayan', 'S', 'male', 'jeronimo.png', 'juan222');
+INSERT INTO Pet (microchip, name, species, race, size, sex, picture, owner_id) VALUES ('343c', 'Johnny', 'dog', 'dalmatian', 'XL', 'male', 'johnny.png', 'pedro456');
+INSERT INTO Pet (microchip, name, species, race, size, sex, picture, owner_id) VALUES ('667d', 'Ed', 'dog', 'pug', 'XS', 'male', 'ed.png', 'elpepe');
+INSERT INTO Pet (microchip, name, species, race, size, sex, picture, owner_id) VALUES ('555e', 'Max', 'cat', 'siberian', 'M', 'nale', 'max.png', 'carlos333');
+
+INSERT INTO Visit (created_at, type, description, vet_id) VALUES ('12/06/2021', 'consulta', 'Una consulta', 'luis342');
+INSERT INTO Visit (created_at, type, description, vet_id) VALUES ('04/04/2021', 'emergencia', 'Sucedio algo', 'juan222');
+INSERT INTO Visit (created_at, type, description, vet_id) VALUES ('15/10/2021', 'limpieza', 'Limpieza del perro', 'pedro456');
+INSERT INTO Visit (created_at, type, description, vet_id) VALUES ('26/11/2020', 'consulta', 'Otra consulta', 'elpepe');
+INSERT INTO Visit (created_at, type, description, vet_id) VALUES ('19/01/2020', 'consulta', 'Tercera consulta', 'carlos333');
+
+INSERT INTO PetCase (created_at, type, description) VALUES ('12/05/2020', 'consulta', 'Una consulta gatuna');
+INSERT INTO PetCase (created_at, type, description) VALUES ('04/05/2021', 'emergencia', 'Sucedio algo malo');
+INSERT INTO PetCase (created_at, type, description) VALUES ('01/9/2020', 'limpieza', 'Limpieza del perro de nuevo');
+INSERT INTO PetCase (created_at, type, description) VALUES ('29/7/2020', 'consulta', 'Otra consulta pero para un perro');
+INSERT INTO PetCase (created_at, type, description) VALUES ('23/02/2021', 'consulta', 'Tercera consulta del dia');
