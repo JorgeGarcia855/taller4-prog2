@@ -48,7 +48,11 @@ public class Controller {
                 switch (scan.nextInt()) {
                     case 1 -> {
                         System.out.print("Ingrese rol: ");
-                        UserService.showUsersByRole(conn, scan.next());
+                        String role = scan.next();
+                        switch (role.toLowerCase()) {
+                            case "funcionario", "propietario" -> UserService.showUsersByRole(conn, role);
+                            default -> System.out.println("Ingrese tipo de rol correcto.");
+                        }
                     }
                     case 2 -> VetService.countVets(conn);
                     case 3 -> {
@@ -58,11 +62,16 @@ public class Controller {
                     case 4 -> {
                         System.out.print("Ingrese tipo de caso: ");
                         String type = scan.next();
-                        System.out.println("Ingrese descripcion: ");
-                        String description = scan.next();
-                        System.out.print("Ingrese id de la mascota: ");
-                        int id = scan.nextInt();
-                        PetCaseService.updatePetCase(conn, new PetCase(df.format(date), type, description, id));
+                        switch (type.toLowerCase()) {
+                            case "perdida", "robo", "fallecimiento" -> {
+                                System.out.println("Ingrese descripcion: ");
+                                String description = scan.next();
+                                System.out.print("Ingrese id de la mascota: ");
+                                int id = scan.nextInt();
+                                PetCaseService.updatePetCase(conn, new PetCase(df.format(date), type, description, id));
+                            }
+                            default -> System.out.println("Debe ingresar un tipo de caso correcto.");
+                        }
                     }
                     case 5 -> System.exit(0);
                     default -> System.out.println("Ingrese una opcion correcta.");
